@@ -1,0 +1,32 @@
+package com.ds.guru;
+
+public class GurusLinkList {
+	Node head;
+	
+	public void insert(int data) {
+		Node newNode = new Node(data);
+		if(head == null) {
+			head = newNode;
+		}
+		else {
+			Node currentNode = head;
+			while(currentNode.next != null) {
+				currentNode = currentNode.next;
+			}
+			currentNode = newNode;
+			newNode.next = currentNode;
+		}
+	}
+	
+	public void showList() {
+		if(head == null) {
+			System.out.println("List is empty");
+		}
+		else {
+			while(head.next != null) {
+				System.out.println(head.data);
+			}
+			System.out.println(head.data);
+		}
+	}
+}
